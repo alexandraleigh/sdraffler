@@ -1,0 +1,17 @@
+<div class="col-sm-2">
+</div>
+<div class="container col-sm-8 well well-md jumbotron" style="text-align:center">
+  <h1>Welcome to Raffler</h1>
+
+
+    <%= form_for @raffle do |f| %>
+      <%= render 'shared/error_messages' %>
+      <div class="form-group">
+        <%= f.label :title, 'Raffle Name' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <%= f.submit "New Raffle", class: "btn btn-primary" %>
+    <% end %>
+
+
+</div>

@@ -1,0 +1,57 @@
+<script>
+  soundManager.debugMode = true;
+  soundManager.flashVersion = 9;
+  soundManager.multiShot = false;
+  soundManager.url = "<%= asset_path('soundmanager2.swf') %>";
+  soundManager.useHTML5Audio = true;
+  soundManager.consoleOnly = true;
+  soundManager.onload = function() {
+      soundManager.createSound({
+      id: 'chant',
+      url: '/audio/chant.mp3',
+      autoLoad: true,
+      autoPlay: true,
+      volume: 50
+    });
+  };
+</script>
+
+<div class="wrap">
+  <% 10.times do %>
+    <div class="firework">
+      <% 40.times do %>
+        <div class="c"></div>
+        <% end %>
+        </div>
+    <% end %>
+<div class="container-fluid well well-s" id="page">
+ <div class="row">
+   <div class="ruby-title col-md-12">
+     <a href="/" class="navbar-brand"><img src="https://www.codementor.io/assets/tutorial_icon/ruby-on-rails.png"></a>
+     <div class="main-title"><%= @raffle.title %></div>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-md-8 container-fluid" id="wheel">
+     <canvas id="wheel-canvas" width="1000" height="600" data-contestants='<%= @raffle.contestant_names %>' data-winners='<%= @winners %>'></canvas>
+     <div id="counter">Spins remaining: <span id="spins"></span></div>
+   </div>
+   <div class="col-md-3 wheel_winners" >
+     <h3>Winners</h3>
+     <ul id='winners' class="blink_me"></ul>
+   </div>
+ </div>
+</div>
+</div>
+
+
+<!-- <ul>
+ <% @raffle.contestants.each do |contestant| %>
+   <li><%= contestant.name %></li>
+ <% end %>
+</ul>
+<ul>
+ <% @winners.each do |w| %>
+     <li><%= w %></li>
+ <% end %>
+</ul> -->
